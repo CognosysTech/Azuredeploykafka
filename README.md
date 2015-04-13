@@ -1,10 +1,10 @@
-# Install kafka cluster on Ubuntu Virtual Machines using Custom Script Linux Extension
+# Install Kafka cluster on Ubuntu Virtual Machines using Custom Script Linux Extension
 
 <a href="https://azuredeploy.net/" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
-This template deploys an kafka cluster on Ubuntu Virtual Machines.  The template provisions 3 dedicated master nodes in one availability set, and a configurable number of data nodes in another availability set.  A load balancer is configured with a rule to route traffic on port 9200 to the client/data nodes, and also includes SSH nat rules for management.  kafka data nodes are configured to store indexes using multiple data disks attached to each virtual machine.
+This template deploys an Kafka cluster on Ubuntu Virtual Machines.  The template provisions 3 dedicated master nodes in one availability set, and a configurable number of data nodes in another availability set.  A load balancer is configured with a rule to route traffic on port 9200 to the client/data nodes, and also includes SSH nat rules for management.  kafka data nodes are configured to store indexes using multiple data disks attached to each virtual machine.
 
 This template also deploys a Storage Account, Virtual Network, Availability Sets, Public IP addresses, Load Balancer, and a Network Interface.
 
@@ -28,7 +28,6 @@ Below are the parameters that the template expects
 
 
 ##Known Issues and Limitations
-- Fixed number of data disks (This is due to a current template feature limitation and is fixed at 2 in order to all A0 instances for testing)
 - Only first two data instances are added to the load balancer and only the first two are accessible via SSH (This is due to a current limitation in the template providers)
 - No security control on the external endpoint or internal load balancing (This is due to some current limitations)
 - Scripts are not yet idempotent and cannot handle updates (This currently works for create ONLY)
