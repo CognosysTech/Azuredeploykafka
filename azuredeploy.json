@@ -16,7 +16,7 @@
         },
         "storageAccountName": {
             "type": "string",
-            "defaultValue" : "uniqueStorageAccountName",
+            "defaultValue" : "kfhkgridstorage",
             "metadata": {
                 "Description": "Unique namespace for the Storage Account where the Virtual Machine's disks will be placed"
             }
@@ -35,13 +35,6 @@
                 "Description": "Virtual Network"
             }
         },
-        "vmSizeMasterNodes": {
-            "type": "string",
-            "defaultValue": "Standard_A0",
-            "metadata": {
-                "Description": "Size of the kafka master nodes"
-            }
-        },
         "vmSizeBrokerNodes": {
             "type": "string",
             "defaultValue": "Standard_A1",
@@ -51,7 +44,7 @@
         },
         "BrokerNodes": {
             "type": "int",
-            "defaultValue": 2,
+            "defaultValue": 3,
             "metadata": {
                 "Description": "Number of kafka Broker nodes"
             }
@@ -79,7 +72,7 @@
         },
         "dnsNameforLBIP": {
             "type": "string",
-            "defaultValue":"uniqueName",
+            "defaultValue":"kfhlbip",
             "metadata": {
                 "Description": "Load balancer subdomain name: for example (<subdomain>.westus.cloudapp.azure.com)"
             }
@@ -97,20 +90,6 @@
             "allowedValues": ["0.8.2.1","0.8.2.0"],
             "metadata": {
                 "Description": "kafka version to install"
-            }
-        },
-        "dataDisksCount": {
-            "type": "int",
-            "defaultValue":2,
-            "metadata": {
-                "Description": "Number of data disks to attach to each data node (consider VM size limits when setting this - NOT IMPLEMENTED)"
-            }
-        },
-        "dataDiskSize": {
-            "type": "int",
-            "defaultValue":200,
-            "metadata": {
-                "Description": "Size of each data disk attached to data nodes in (Gb)"
             }
         }
     },
@@ -202,7 +181,7 @@
         {
             "apiVersion": "2014-12-01-preview",
             "type": "Microsoft.Compute/virtualMachines",
-            "name": "[concat('myvm', copyindex())]",
+            "name": "[concat('ksBroker', copyindex())]",
             "location": "[parameters('region')]",
             "copy": {
                 "name": "virtualMachineLoop",
@@ -250,7 +229,7 @@
                 "count": "[parameters('BrokerNodes')]"
             },
             "dependsOn": [
-                "[concat('Microsoft.Compute/virtualMachines/', 'myvm', copyindex())]"
+                "[concat('Microsoft.Compute/virtualMachines/', 'ksBroker', copyindex())]"
             ],
             "properties": {
                 "publisher": "Microsoft.OSTCExtensions",
