@@ -1,0 +1,29 @@
+{
+    "dnsNameforLBIP": {
+        "value":"cogtest23"
+    },
+    "storageAccountName" : {
+        "value":"cogtest23"
+    },
+    "adminUsername": {
+        "value": "coguser"
+    },
+    "adminPassword": {
+        "value": "Kfhk!2015"
+    },
+    "BrokerNodes": {
+        "value": 2
+    },
+    "region": {
+        "value": "Southeast Asia"
+    },
+    "virtualNetworkName": {
+        "value": "kafka"
+    },
+    "ksClusterName": {
+        "value": "kafka-fullscale"
+    },
+    "vmSizeBrokerNodes": {
+        "value": "Standard_A1"
+    }
+}
