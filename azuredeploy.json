@@ -239,7 +239,7 @@
                     "fileUris": [
                         "[variables('scriptUrl')]"
                     ],
-                    "commandToExecute": "[concat('bash kafka-azure-install.sh -b ', copyIndex(), ' -k ', parameters('ksVersion')]"
+                    "commandToExecute": "[concat('bash kafka-azure-install.sh -b ', copyIndex(), ' -k ', parameters('ksVersion'))]"
                 }
             }
         }
