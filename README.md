@@ -22,17 +22,13 @@ Below are the parameters that the template expects
 | vmSizeBrokerNodes | Size of the Cluster Data Virtual Machine Instances |
 | BrokerNodes | Number of kafka data storage instances in the cluster |
 | ksVersion | kafka version to deploy (0.8.2.1) |
-| dataDisksCount * | Number of data disks to attach to data storage instances (NOT IMPLEMENTED due to current limitation in the provider and fixed at 2) |
-| dataDiskSize | The size of each data disk attached in Gb (default 200GB) |
-
-
 
 ##Known Issues and Limitations
 - Only first two data instances are added to the load balancer and only the first two are accessible via SSH (This is due to a current limitation in the template providers)
 - No security control on the external endpoint or internal load balancing (This is due to some current limitations)
 - Scripts are not yet idempotent and cannot handle updates (This currently works for create ONLY)
 - Not yet monitoring the instances or kafka process using probes or monit
-- Fixed configuration of data, master, and client nodes
+- Fixed configuration of broker nodes
 - Storage option is currently limited to persistent data disks that utilize kafka multi-path storage features as opposed to OS striping
 - Not all kafka configurations are exposed through parameters
 - Cluster nodes are not aware of upgrade/fault domains so there is no way to ensure kafka places replicas across these when cluster node size exceeds the maximum and multiple nodes are in the same upgrade or fault domain
