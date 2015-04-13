@@ -99,7 +99,7 @@
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',parameters('virtualNetworkName'))]",
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet1Name'))]",
         "sourceImageName": "[concat('/', subscription().subscriptionId,'/services/images/',variables('vmSourceImageName'))]",
-        "scriptUrl":"http://gridbackend.blob.core.windows.net/scripts/kafka-azure-install.sh"
+        "scriptUrl":"https://raw.githubusercontent.com/CognosysTech/Azuredeploykafka/master/kafka-azure-install.sh"
     },
     "resources": [
         {
