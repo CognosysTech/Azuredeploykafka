@@ -18,7 +18,6 @@ Below are the parameters that the template expects
 | dnsNameforLBIP  | Unique DNS Name for the Public IP used for load balancer. |
 | region | region where the resources will be deployed |
 | virtualNetworkName | Name of Virtual Network |
-| vmSizeMasterNodes | Size of the Cluster Master Virtual Machine Instances |
 | vmSizeBrokerNodes | Size of the Cluster Data Virtual Machine Instances |
 | BrokerNodes | Number of kafka data storage instances in the cluster |
 | ksVersion | kafka version to deploy (0.8.2.1) |
