@@ -221,7 +221,7 @@
         },
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
-            "name": "[concat('myvm', copyindex(), '/installkafka')]",
+            "name": "[concat('ksBroker', copyindex(), '/installkafka')]",
             "apiVersion": "2014-12-01-preview",
             "location": "[parameters('region')]",
             "copy": {
