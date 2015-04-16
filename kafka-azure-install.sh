@@ -36,14 +36,14 @@ fi
 # TEMP FIX - Re-evaluate and remove when possible
 # This is an interim fix for hostname resolution in current VM
 grep -q "${HOSTNAME}" /etc/hosts
-if [ $? -eq $SUCCESS ]
+if [ $? -eq $SUCCESS ];
 then
   echo "${HOSTNAME}found in /etc/hosts"
 else
   echo "${HOSTNAME} not found in /etc/hosts"
   # Append it to the hsots file if not there
   echo "127.0.0.1 $(hostname)" >> /etc/hosts
-  log "hostname ${HOSTNAME} added to /etchosts"
+  log "hostname ${HOSTNAME} added to /etc/hosts"
 fi
 
 #Script Parameters
@@ -51,7 +51,7 @@ KF_VERSION="0.8.2.1"
 BROKER_ID=0
 
 #Loop through options passed
-while getopts :n:d:v:l:xyzsh optname; do
+while getopts :k:b:h optname; do
     log "Option $optname set with value ${OPTARG}"
   case $optname in
     k)  #kafka version
