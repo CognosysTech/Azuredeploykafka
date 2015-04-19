@@ -1,29 +1,80 @@
 {
-    "dnsNameforLBIP": {
-        "value":"cogtest23"
-    },
-    "storageAccountName" : {
-        "value":"cogtest234"
+    "storageAccountName": {
+        "value": "armdeploy1"
     },
     "adminUsername": {
-        "value": "coguser"
+        "value": ""
     },
     "adminPassword": {
-        "value": "Kfhk!2015"
-    },
-    "BrokerNodes": {
-        "value": 2
+        "value": ""
     },
     "region": {
-        "value": "Southeast Asia"
+        "value": "West US"
     },
     "virtualNetworkName": {
-        "value": "kafka"
+        "value": "kafkaClustVnet"
     },
-    "ksClusterName": {
-        "value": "kafka-fullscale"
+    "subnetName": {
+        "value": "Subnet1"
     },
-    "vmSizeBrokerNodes": {
-        "value": "Standard_A1"
-    }
+    "addressPrefix": {
+        "value": "10.0.0.0/16"
+    },
+    "subnetPrefix": {
+        "value": "10.0.0.0/24"
+    },
+    "kafkaVersion": {
+        "value": "0.8.2.1"
+    },
+    "kafkaClusterName": {
+        "value": "kafka-arm-cluster"
+    },
+    "kafkaNodeIPAddressPrefix": {
+        "value": "10.0.0.1"
+    },
+    "zookeeper": {
+        "value": "enabled"
+    },
+    "zookeeperipport": {
+        "value": "10.0.0.4:2181"
+    },
+    "tshirtSize":  {
+        "value": "S"
+    },
+    "newStorageAccountName": {
+	    "value": ""
+	},
+	"publicIPAddressType": {
+	    "value": "Dynamic"
+	},
+	"availabilitySetName": {
+	    "value": ""
+	},
+	"vmName": {
+	    "value": ""
+	},
+	"vmSize": {
+	    "value": "Standard_A2"
+	},
+	"adminUserName": {
+	    "value": ""
+	},
+	"adminPassword": {
+	    "value": ""
+	},
+	"virtualNetworkName": {
+	    "value": ""
+	},
+	"nicName": {
+	    "value": ""
+	},
+	"vmExtensionName": {
+	    "value": "zookeeper"
+	},
+	"customScriptFilePath": {
+	    "value": ""
+	},
+	"customScriptCommandToExecute": {
+	    "value": "sh zookeeper.sh "
+	}
 }
